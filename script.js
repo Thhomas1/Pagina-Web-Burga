@@ -12,4 +12,20 @@ menu.onclick = () =>{
 window.onscroll = () =>{
     menu.classList.remove('fa-times');
     navbar.classList.remove('active'); // setear el responsive cuando es pc y cuando es celu
+
+    if(window.scrollY > 60){
+        document.querySelector('#scroll-top').classList.add('active');
+    }else{
+        document.querySelector('#scroll-top').classList.remove('active');
+    }
 }
+
+function loader(){ //para establecer el loader!
+    document.querySelector('.loader-container').classList.add('fade-out');
+}
+
+function fadeOut(){
+    setInterval(loader, 3000);
+}
+
+window.onload = fadeOut();
